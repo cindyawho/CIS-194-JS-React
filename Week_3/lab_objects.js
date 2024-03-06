@@ -31,7 +31,13 @@ darthVader.childNames = ['Luke', 'Leia'];
 console.log("Darth Vader\'s amount of children: ", darthVader.children);
 console.log("Darth\'s first child: ", darthVader.childNames[0]);
 // Instruction 6 - iterate over the object
-// (a), (b)
+// (a)
+for (var key in darthVader) {
+    let value = darthVader[key];
+    // (b)
+    console.log(key, ":", value);
+}
+
 // Instruction 7 - manipulate the object
 // (a), (b), (c), (d)
 
