@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //What happens when you add the following two lines to this app?
-const element = <h1>React is AWESOME! </h1>;
-ReactDOM.render(element, document.getElementById('root'));
+//const element = <h1>React is AWESOME! </h1>;
+//ReactDOM.render(element, document.getElementById('root'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
