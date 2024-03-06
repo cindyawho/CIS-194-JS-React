@@ -1,0 +1,49 @@
+//Lab Exercise: Classes, Objects
+/*This is a quick exercise to test your knowledge of classes and the concept of objects.
+
+DESCRIPTION
+Complete the following steps:
+
+Launch your web development IDE of choice.
+Fill in your JavaScript code in between the instruction numbers according to the step numbers below:
+// Instruction 3 - create a new object
+// (a), (b), (c)
+// Instruction 4 - access object properties
+// (a), (b), (c), (d)
+// Instruction 5 - add to the map
+// (a), (b), (c)
+// Instruction 6 - iterate over the object
+// (a), (b)
+// Instruction 7 - manipulate the object
+// (a), (b), (c), (d)
+
+3. Create a new Object called darthVader and add the following key/value pairs to it:
+    a) allegiance/Empire;
+    b) weapon/lightsabre;
+    c) sith/true (boolean value).
+
+4. Access the properties that you have just declared by console-logging out the following details:
+    a) The value of DarthVader's allegiance;
+    b) The value of Darth Vader's weapon;
+    c) The value of whether Darth Vader is a sith;
+    d) The value of Jedi from Darth Vader (note Jedi may not exist; that is ok);
+    e) The number of properties Darth Vader has (see the line of code below for this)
+console.log(Object.keys(darthVader).length); 
+Note: Object.keys is a function that takes an object and returns an array of the keys in it. By appending .length to it, we return the number of keys in the object.
+
+5. Add key/value pairs to darthVader that:
+    a) Sets a key of children to 2;
+    b) Sets a key of childNames to the array ['Luke', 'Leia'];
+    c) Console log the children property and the value of the first element in the childNames array.
+
+6. For this step, perform the following:
+    a) Iterate over darthVader using a for...in loop that uses both the key and the value of each pair;
+    b) Then, console-logging out each pair.
+
+7. Manipulate the object by:
+    a) Changing the value of allegiance to The light side and console-log darthVader;
+    b) Deleting the key/value pair children of darthVader and console-log darthVader. Hint: use the code below:
+        delete darthVader.children;
+    c) De-structuring the object, setting a variable for each of the keys in the object to the corresponding value in the object:
+        let {allegiance, weapon, sith, childNames} = darthVader;
+    d) Lastly, clearing the darthVader object and console log it.*/
