@@ -3,52 +3,39 @@ import './App.css';
 
 function App() {
   const react = ['NPM', 'Node.js', 'JXS', 'Babel', 'Transpiler', 'Props', 'Single Page Application'];
-  
-  // function printList(array) {
-  //   let string = Array.prototype.map(array);
-  //   return string;
-  // }
 
-  // const element = (
-  //   <ul>
-  //     {printList(react)};
-  //   </ul>
-  // );
+  function renderList(react) {
+    
+    let map1 = react.map((item, index) => (
+      <li key={index}>{item}</li>
+    ));
+
+    let returnElement = (
+      <ol>
+        {map1}
+      </ol>
+    )
+    
+    return returnElement;
+  }
+  
   
   return (
      // YOUR JAVASCRIPT MAP() AND JSX CODE HERE
-    <ul>
-      {react.prototype.map(react => {
-        return (
-          <li>
-            {react}
-          </li>
-        )
-      })}
-    </ul>
+    //Note to self: the <> and </> are very important to compiling and rendering the code in react
+    <>
+    {/*No Function used*/}
+      <ol>
+        {react.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ol>
+    
+    {/*Function used*/}
+    <img src={logo} className="App-logo" alt="logo" />
+    {renderList(react)}
+    </>
+    
   );
 }
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
