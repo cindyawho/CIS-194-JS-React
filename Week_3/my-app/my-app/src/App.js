@@ -32,7 +32,6 @@ function App() {
       </ol>
     
     {/*Function used*/}
-    <img src={logo} className="App-logo" alt="logo" />
     {renderList(react)}
     </>
     
