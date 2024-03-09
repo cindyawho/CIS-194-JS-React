@@ -4,20 +4,20 @@ import './App.css';
 function App() {
   const react = ['NPM', 'Node.js', 'JXS', 'Babel', 'Transpiler', 'Props', 'Single Page Application'];
 
-  function renderList(react) {
+  // function renderList(react) {
     
-    let map1 = react.map((item, index) => (
-      <li key={index}>{item}</li>
-    ));
+  //   let map1 = react.map((item, index) => (
+  //     <li key={index}>{item}</li>
+  //   ));
 
-    let returnElement = (
-      <ol>
-        {map1}
-      </ol>
-    )
+  //   let returnElement = (
+  //     <ol>
+  //       {map1}
+  //     </ol>
+  //   )
     
-    return returnElement;
-  }
+  //   return returnElement;
+  // }
   
   
   return (
@@ -30,9 +30,9 @@ function App() {
           <li key={index}>{item}</li>
         ))}
       </ol>
-    
-    {/*Function used*/}
-    {renderList(react)}
+{/*     
+    {/*Function used}
+    {renderList(react)} */}
     </>
     
   );
