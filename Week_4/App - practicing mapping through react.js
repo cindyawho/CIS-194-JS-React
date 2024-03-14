@@ -2,6 +2,17 @@ import './App.css';
 import data from "./data"
 import Card from "./Card"
 
+const objList = [
+    {
+        title: "React home",
+        url: "https://reactjs.org",
+    },
+    {
+        title: "Google Link",
+        url: "https://google.com",
+    },
+];
+
 function App() {
  
     // YOUR CODE HERE
@@ -28,7 +39,7 @@ function App() {
             {/* {
                 objList.map(item => <div><a href={item.url}>{item.title}</a></div>)
             } */}
-            <listComponent />
+            {listComponent()}
             </p>
         </div>
     );
