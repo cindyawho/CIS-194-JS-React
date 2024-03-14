@@ -25,12 +25,18 @@ function App() {
     return(
         <div>
             <p>
-            {
+            {/* {
                 objList.map(item => <div><a href={item.url}>{item.title}</a></div>)
-            }
+            } */}
+            <listComponent />
             </p>
         </div>
     );
+}
+
+function listComponent() {
+    return objList.map(item => 
+        <div><a href={item.url}>{item.title}</a></div>)
 }
 
 export default App;
