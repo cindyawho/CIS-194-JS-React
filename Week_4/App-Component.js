@@ -13,19 +13,15 @@ class Sentence {
     }
 }
 
-function App() {
+const App = () => 
+    <div>
+        <p>
+            {/* Creating/instantiating an instance of List component */}
+            <List />
+        </p>
+    </div>
 
-    return(
-        <div>
-            <p>
-                {/* Creating/instantiating an instance of List component */}
-                <List />
-            </p>
-        </div>
-    );
-}
-
-function List() {
+const List = () => {
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
     
@@ -37,5 +33,11 @@ function List() {
         </div>
     );
 }
+
+//original function declaration:
+// function name() {...}
+
+//arrow function:
+// const name() => {...}
 
 export default App;
