@@ -4,6 +4,7 @@ export default function Card(props) {
   const{id, title, description, price, coverImg, stats, location} = props.item;
   
   console.log("CoverImg saved: ", coverImg);
+  const fileName = "images/" + coverImg;
   
   return(
     <div>
@@ -11,7 +12,7 @@ export default function Card(props) {
         {
           <>
             {/* {console.log(item)}; */}
-            {/* <div><img src={coverImg}/></div> ?use sentence function to combine "./" with coverImg? */}
+            <div><img src={fileName} alt="Cover Image of fruit"/></div> {/*?use sentence function to combine "./" with coverImg? */}
             <div>{title}</div>
             <div><b>Average Cost ${price}</b> / LB</div>
             <div>Kingdom: {stats.kingdom}</div>
