@@ -2,6 +2,17 @@ import './App.css';
 import data from "./data"
 import Card from "./Card"
 
+// class fileName {
+//     constructor(fileStart, fileEnd){
+//         this.fileStart = fileStart;
+//         this.fileEnd = fileEnd;
+//     }
+
+//     getSentence(){
+//         return this.fileStart + this.fileEnd;
+//     }
+// }
+
 function App() {
  
     // YOUR CODE HERE
@@ -18,15 +29,16 @@ function App() {
     //     },
     //     location: "Japan"
     // }
-    
+    //const appleImage = new fileName("./", "1.coverImg");
 
-        return(
+    return(
         <div>
             <p>
             {
                 data.map(item => 
                     <>
-                        <div><img src={item.coverImg}/></div> 
+                        {console.log(item)};
+                        <div><img src={item.coverImg}/></div> {/*?use sentence function to combine "./" with coverImg?*/}
                         <div>{item.title}</div>
                         <div><b>Average Cost ${item.price}</b> / LB</div>
                         <div>Kingdom: {item.stats.kingdom}</div>
@@ -40,5 +52,11 @@ function App() {
         </div>
     );
 }
+// const imageFile = props => {
+//     if(props=="1"){
+//         return("./item.coverImg");
+//     }
+//     return ("a");
+// }
 
 export default App;
