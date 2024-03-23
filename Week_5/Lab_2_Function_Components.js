@@ -9,6 +9,7 @@ const App = () => {
   );
 };
 
+//Using props
 const Title = props => (
   <h1>{props.name}</h1>
 );
