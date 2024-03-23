@@ -1,19 +1,21 @@
-import './App.css';
-import data from "./data"
-import Card from "./Card"
+import React from 'react';
+import './index.css';
 
-function App() {
-    //Mapping items from data, sending it to Card, and receiving the rendered version
-    const items = data.map((item, index) => (
-        //similar to <List /> from video
-        <Card key={index} item={item} />
-    ));
+const App = () => {
+  return (
+    <div>
+      <Title  name="React"/>
+      <SubTitle />
+    </div>
+  );
+};
 
-    return(
-        <>
-            {items}
-        </>
-    );
+const Title = props => (
+  <h1>{props.name}</h1>
+);
+
+function SubTitle() {
+  return <p>A JavaScript library for building user interfaces.</p>;
 }
 
 export default App;
