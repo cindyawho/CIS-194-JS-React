@@ -50,12 +50,7 @@ const App = () => {
   // Your ToC is being filtered based on the user input. HINT: 
   // You may use the JavaScript's filter() method on array.
   // ---------------------------------------------------------
-  const searchResults = () => {
-    console.log("Search Results complete");
-    return(
-        <div>Done</div>
-    )
-  }
+  const searchResults = toc
 
   return (
     <div>
@@ -88,8 +83,19 @@ const Search = props => (
 // This component renders the filtered search results based 
 // on the user input.
 // ---------------------------------------------------------
-const List = () => {
+const List = ({ results }) => {
     console.log("List component called and complete");
-  }
+    const items = results.map((item, index) => (
+        <div key={index}>
+            <p><a href={item.url}>{item.title}</a></p>
+        </div>
+    ));
+    return (
+        <div>
+            {/* <h1>List</h1> */}
+            {items} 
+        </div>
+    );
+}
 
 export default App;
