@@ -13,12 +13,9 @@ class Sentence {
 }
 
 const App = () => {
-
-    const handleEvent = evt => {
-        setCheckTerm(evt.target.value);
+    const handleInput = evt => {
+        console.log(evt.target.value);
     };
-
-    const[checkTerm, setCheckTerm] = React.useState("nothing");
 
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
@@ -27,17 +24,33 @@ const App = () => {
         <div className="App">
             <header className="App-header">
                 <p>
+                    {/* Child 1: List */}
                     <List first={helloWorld} second={reactRocks} />
                 </p>
-                <div>
-                    <label htmlFor='Check'>Check: </label>
-                    <input id="check" type="text" onChange={handleEvent}/>
-                    <p>Checking for <b>{checkTerm}</b></p>
-                </div>
+                <p>
+                    {/* Child 2: Input */}
+                    <Input onInput = {handleInput}/>
+                </p>
             </header>
         </div>
     );
 };
+
+const Input = props => {
+    const handleEvent = evt => {
+        setCheckTerm(evt.target.value);
+        props.onInput(evt);
+    };
+
+    const[checkTerm, setCheckTerm] = React.useState("nothing");
+    return(
+        <div>
+            <label htmlFor='Check'>Check: </label>
+            <input id="check" type="text" onChange={handleEvent}/>
+            <p>Checking for <b>{checkTerm}</b></p>
+        </div>
+    )
+}
 
 const List = props => {
     
