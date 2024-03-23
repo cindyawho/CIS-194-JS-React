@@ -61,30 +61,37 @@ const App = () => {
           </div>
         </div>
       </form>
-      
+      <div>
+        <Search />
+      </div>
+      <div>
+        <List />
+      </div>
     </div>
   )
 }
 
-const Search = props => {
+const Search = () => {
 
     return (
         <div>
-            <h1>Search</h1>
-            <label htmlFor='Check'>Check: </label>
-            {/* <input id="check" type="text" onChange={handleInput}/> */}
+            <h1>Search  
+            <input id="check" type="text" />
+            </h1>
         </div>
     );
 }
 
-const List = props => {
+const List = () => {
     const items = list.map((item, index) => (
-        //similar to <List /> from video
-        {item}
+        <div>
+            <p><a href={item.url}>{item.title}</a></p>
+        </div>
     ));
     return (
-        <div>List
-           {items} 
+        <div>
+            <h1>List</h1>
+            {items} 
         </div>
     );
 }
