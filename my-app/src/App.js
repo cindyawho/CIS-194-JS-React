@@ -42,7 +42,8 @@ const App = () => {
   // into the aforementioned state variable in the app.
   // ---------------------------------------------------------
   const handleSearch = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
+    setToC(event.target.value);
   }
   
   // ---------------------------------------------------------
@@ -50,7 +51,9 @@ const App = () => {
   // Your ToC is being filtered based on the user input. HINT: 
   // You may use the JavaScript's filter() method on array.
   // ---------------------------------------------------------
-  const searchResults = toc
+  const searchResults = toc.filter(item => 
+    item.title.includes(searchToC)
+  )
 
   return (
     <div>
