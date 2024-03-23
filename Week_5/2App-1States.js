@@ -1,4 +1,23 @@
+/***********************NOTES*******************************
+States are used to make sites interactive
+States are used as a property to describe where properties are at at a certain time
+Use state function as a hook
+
+Destructuring: remembering we can unpack them using destructuring
+//Example:
+const list = [1, 2];
+const [one, two] = list;
+console.log(one);
+console.log(two);
+
+//Example 2 also works:
+function getNums(){
+    return [1,2];
+}
+const[one, two] = getNums();
+*/
 import './App.css';
+import React from 'react';
 
 class Sentence {
     constructor(word1, word2){
@@ -16,6 +35,9 @@ const App = () => {
     const handleEvent = event => {
         console.log(event);
     };
+//~~~~~~~~~~~~~~~~~~~~~~~~~~STATE Stuff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//checkTerm is before, setCheckTerm is after
+    const[checkTerm, setCheckTerm] = React.useState("nothing");
 
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
@@ -30,6 +52,7 @@ const App = () => {
                 <div>
                     <label htmlFor='Check'>Check: </label>
                     <input id="check" type="text" onChange={handleEvent}/>
+                    <p>Checking for <b>{checkTerm}</b></p>
                 </div>
             </header>
         </div>
