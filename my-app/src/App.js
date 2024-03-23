@@ -3,8 +3,8 @@ import React from 'react';
 // This is your callback from Search input. You will
 // take the event and print its value to the console 
 // log
-const handleSearch = {
-    
+const handleSearch = (event) => {
+    console.log(event.target.value);
 }
 
 const App = () => {
