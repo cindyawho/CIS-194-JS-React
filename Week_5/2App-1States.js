@@ -32,10 +32,12 @@ class Sentence {
 
 const App = () => {
 
-    const handleEvent = event => {
-        console.log(event);
+    const handleEvent = evt => {
+        setCheckTerm(evt.target.value);
     };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~STATE Stuff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//States constantly capture the before and after states
+//States are not props
 //checkTerm is before, setCheckTerm is after
     const[checkTerm, setCheckTerm] = React.useState("nothing");
 
