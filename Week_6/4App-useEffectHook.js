@@ -52,9 +52,8 @@ const App = () => {
     );
 };
 
-const Input = props => {
-    // destructuring props so that it is "less confusing" in the return statement for devs
-    const {onInput, userInput} = props;
+const Input = ({onInput, userInput}) => {
+    // destructuring props in the above line makes it even simpler
 
     return(
         <div>
