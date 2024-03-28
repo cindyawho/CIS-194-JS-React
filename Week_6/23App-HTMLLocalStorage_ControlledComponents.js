@@ -17,13 +17,15 @@ const App = () => {
         // Is only triggered when the Input is called
         setCheckTerm(evt.target.value);
         console.log(evt.target.value);
+        localStorage.setItem('input', evt.target.value);
     };
 
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
 
-    const[checkTerm, setCheckTerm] = React.useState("nothing");
-    // State gets initialized
+    const[checkTerm, setCheckTerm] = React.useState(    // State gets initialized
+        localStorage.getItem('input') || 'nothing'
+    );
 
     return (
         <div className="App">
