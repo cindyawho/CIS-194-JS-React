@@ -23,7 +23,7 @@ const App = () => {
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
 
-    const[checkTerm, setCheckTerm] = React.useState(    // State gets initialized
+    const[checkTerm, setCheckTerm] = React.useState( // State gets initialized || default value
         localStorage.getItem('input') || 'nothing'
     );
 
