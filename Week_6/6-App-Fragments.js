@@ -53,12 +53,12 @@ const App = () => {
 };
 
 const Input = ({onInput, userInput}) => (
-    // line 57 and 61 are called Fragments
-    <> 
+    // line 57 and 61 are called Fragments bypasses the need to have Divs, which allows for cleaner substitutions, like in tables
+    <React.Fragment> 
         <label htmlFor='Check'>Check: </label>
         <input id="check" type="text" value={userInput} onChange={onInput}/>
         <p>Checking for <b>{userInput}</b></p>
-    </>
+    </React.Fragment>
 );
 
 const List = props => {
