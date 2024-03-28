@@ -52,13 +52,15 @@ const App = () => {
     );
 };
 
-const Input = props => {
-    // Cleaner version, will go to onInput
+const Input = (props) => {
+    // destructuring props so that it is "less confusing" in the return statement for devs
+    const {onInput, userInput} = props;
+
     return(
         <div>
             <label htmlFor='Check'>Check: </label>
-            <input id="check" type="text" value={props.userInput} onChange={props.onInput}/>
-            <p>Checking for <b>{props.userInput}</b></p>
+            <input id="check" type="text" value={userInput} onChange={onInput}/>
+            <p>Checking for <b>{userInput}</b></p>
         </div>
     )
 }
