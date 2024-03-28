@@ -52,7 +52,7 @@ const App = () => {
     );
 };
 
-const Input = (props) => {
+const Input = props => {
     // destructuring props so that it is "less confusing" in the return statement for devs
     const {onInput, userInput} = props;
 
