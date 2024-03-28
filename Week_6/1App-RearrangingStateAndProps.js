@@ -14,11 +14,16 @@ class Sentence {
 
 const App = () => {
     const handleInput = evt => {
+        // Is only triggered when the Input is called
+        setCheckTerm(evt.target.value);
         console.log(evt.target.value);
     };
 
     const helloWorld = new Sentence("Hello", "World!");
     const reactRocks = new Sentence("React", "rocks!");
+
+    const[checkTerm, setCheckTerm] = React.useState("nothing");
+    // State gets initialized
 
     return (
         <div className="App">
@@ -29,7 +34,7 @@ const App = () => {
                 </p>
                 <p>
                     {/* Child 2: Input */}
-                    <Input onInput = {handleInput}/>
+                    <Input onInput = {handleInput} userInput = {checkTerm} />
                 </p>
             </header>
         </div>
@@ -37,17 +42,12 @@ const App = () => {
 };
 
 const Input = props => {
-    const handleEvent = evt => {
-        setCheckTerm(evt.target.value);
-        props.onInput(evt);
-    };
-
-    const[checkTerm, setCheckTerm] = React.useState("nothing");
+    // Cleaner version, will go to onInput
     return(
         <div>
             <label htmlFor='Check'>Check: </label>
-            <input id="check" type="text" onChange={handleEvent}/>
-            <p>Checking for <b>{checkTerm}</b></p>
+            <input id="check" type="text" onChange={props.onInput}/>
+            <p>Checking for <b>{props.userInput}</b></p>
         </div>
     )
 }
