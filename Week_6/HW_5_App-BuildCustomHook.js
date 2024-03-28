@@ -16,22 +16,22 @@ class Sentence {
 // ------------------------------------------------
 // INSERT YOUR TODO SECTION OF CODE BELOW
 // ------------------------------------------------
-const useMyCustomHook = YOUR_CODE_HERE_1 => {
+const useMyCustomHook = (startValue) => {
 
    // State Hook
    const [value, setValue] = React.useState(
-      localStorage.getItem(YOUR_CODE_HERE_2) || YOUR_CODE_HERE_3    
+      localStorage.getItem('input') || startValue    
    );
 
    // Side Effect Hook
    React.useEffect(
       ()=> {
-         localStorage.setItem(YOUR_CODE_HERE_4);
+         localStorage.setItem('input', value);
       }, 
-      [YOUR_CODE_HERE_5]
+      [value],
    );
  
-   YOUR_CODE_HERE_6
+   return [value, setValue];
 };
 
 const App = () => {
