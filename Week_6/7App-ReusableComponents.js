@@ -39,18 +39,24 @@ const App = () => {
                     <List first={helloWorld} second={reactRocks} />
                 </p>
                 <p>
-                    <Input onInput = {handleInput} userInput = {checkTerm} />
+                    <Input 
+                        id = "check"
+                        value1 = "Check: "
+                        value2 = "Checking for "
+                        onInput = {handleInput} 
+                        userInput = {checkTerm} 
+                    />
                 </p>
             </header>
         </div>
     );
 };
 
-const Input = ({onInput, userInput}) => (
+const Input = ({id, value1, value2, type='text', onInput, userInput}) => (
     <> 
-        <label htmlFor='Check'>Check: </label>
-        <input id="check" type="text" value={userInput} onChange={onInput}/>
-        <p>Checking for <b>{userInput}</b></p>
+        <label htmlFor={id}>{value1}</label>
+        <input id={id} type={type} value={userInput} onChange={onInput}/>
+        <p>{value2} <b>{userInput}</b></p>
     </>
 );
 
