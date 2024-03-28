@@ -17,7 +17,7 @@ const App = () => {
         // Is only triggered when the Input is called
         setCheckTerm(evt.target.value);
         console.log(evt.target.value);
-        localStorage.setItem('input', evt.target.value);
+        // localStorage.setItem('input', evt.target.value); //don't need this because of useEffect below
     };
 
     const helloWorld = new Sentence("Hello", "World!");
@@ -25,6 +25,15 @@ const App = () => {
 
     const[checkTerm, setCheckTerm] = React.useState( // State gets initialized || default value
         localStorage.getItem('input') || 'nothing'
+    );
+
+    React.useEffect(
+        // callback function (aka side effect function)
+        () => {
+            localStorage.setItem('input', checkTerm);
+        },
+        // dependency array
+        [checkTerm],
     );
 
     return (
