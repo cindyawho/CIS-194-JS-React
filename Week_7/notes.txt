@@ -18,3 +18,20 @@ function Greeting(props) {
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 // Try changing to isLoggedIn={true}:
 root.render(<Greeting isLoggedIn={false} />);
+
+Destructuring object (different from destructuring arrays)
+Object:
+const person = {
+   img: "./images/mr_joe.png",
+   name: "Mr. Joe",
+   phone: "(800) 123-1234",
+   email: "joe@school.edu"
+}
+//Method 1:
+destructure(person);
+function destructure({name, email}){
+    console.log(name + " and " + email);
+};
+//Method 2:
+const { name, email } = person;
+console.log(name + " and " + email);
