@@ -41,22 +41,23 @@ const App = () => {
                 <p>
                     <Input 
                         id = "check"
-                        value1 = "Check: "
-                        value2 = "Checking for "
+                        value = "Checking for "
                         onInput = {handleInput} 
                         userInput = {checkTerm} 
-                    />
+                    >
+                        <b>Check: </b>
+                    </Input>
                 </p>
             </header>
         </div>
     );
 };
 
-const Input = ({id, value1, value2, type='text', onInput, userInput}) => (
+const Input = ({id, value, type='text', onInput, userInput, children}) => (
     <> 
-        <label htmlFor={id}>{value1}</label>
+        <label htmlFor={id}>{children}</label>
         <input id={id} type={type} value={userInput} onChange={onInput}/>
-        <p>{value2} <b>{userInput}</b></p>
+        <p>{value} <b>{userInput}</b></p>
     </>
 );
 
