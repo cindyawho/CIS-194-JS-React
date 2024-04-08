@@ -4,3 +4,17 @@ object composition
 <Parent>
     <>  Child but written as .children to access </>
 </>
+
+
+An example of Conditional Rendering, see in https://legacy.reactjs.org/docs/conditional-rendering.html: 
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
