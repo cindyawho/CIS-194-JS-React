@@ -23,21 +23,24 @@ const getAsynchBookmarks = () =>
 function App() {
 
     const [bookmarks, setBookmarks] = React.useState([""]);
+    const[isLoading, setIsLoading] = React.useState(false);
 
-    React.useEffect(
-        () => {
-        //get data
+    React.useEffect(() => {
+        setIsLoading(true);
         getAsynchBookmarks().then( result => {
             setBookmarks(result.data.x);
+            setIsLoading(false);
         });
-    }, 
-    []);
+    }, []);
 
     return(
         <div>
             <h1>Please wait 3 seconds</h1>
             <p>
-                <List links = {bookmarks}/>
+                {/* (condition) ? exe1 : exe2 */}
+                {
+                    isLoading ? (<p>Loading...</p>) : <List links = {bookmarks}/>
+                }
             </p>
         </div>
     );
