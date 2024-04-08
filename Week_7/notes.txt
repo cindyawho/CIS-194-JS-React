@@ -1,0 +1,6 @@
+Has...a 
+object composition
+ 
+<Parent>
+    <>  Child but written as .children to access </>
+</>
