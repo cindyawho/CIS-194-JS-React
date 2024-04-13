@@ -13,12 +13,15 @@ const initialBookmarks = [
 ];
 
 const getAsynchBookmarks = () =>
-    new Promise(resolve =>
-        setTimeout(
-            () => resolve({data: {x: initialBookmarks}}),
-            3000
-        )
-);
+//     new Promise(resolve =>
+//         setTimeout(
+//             () => resolve({data: {x: initialBookmarks}}),
+//             3000
+//         )
+// );
+// creating artificial errors, the issue is that we get both an error and loading message at the same time which is a bad user experience
+new Promise((resolve, reject) => setTimeout(reject, 3000));
+
 const bookmarksReducer = (state, action) => {
     switch(action.type) {
         case "SET_BOOKMARKS":
