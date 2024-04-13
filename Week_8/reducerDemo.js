@@ -4,6 +4,7 @@
 // is used to trigger the action and update the state. When the dispatch function is called with 
 // an action, it passes the action object to the reducer function along with the current state, and the
 // reducer returns the new state based on the action. Finally, the updated state is displayed in the component.
+// https://legacy.reactjs.org/docs/hooks-reference.html#usereducer
 
 import React, { useReducer } from 'react';
 
