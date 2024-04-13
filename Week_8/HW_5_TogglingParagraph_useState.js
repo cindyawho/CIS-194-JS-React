@@ -26,15 +26,33 @@ function DisplayParagraph({ text, maxLength }) {
   // toggling the paragraph into either a long or short form.
   // HINT: const [...] = useState(...);
   // ----------------------------------------------------
-  YOUR_CODE_HERE
+  const [form, setForm] = React.useState(false);
 
   // ----------------------------------------------------
   // TODO (B): fill in YOUR_CODE_HERE below. This is the bulk
   // of the toggling you need to perform
   // ----------------------------------------------------
+  
+  function handleClick(){
+    if(form == false){
+        setForm(true);
+        console.log(form);
+        let result = text;
+        let aText = "...Read Less";
+    }
+    else if(form == true){
+        setForm(false);
+        console.log(form);
+        let result = text.substr(0, maxLength);
+        let aText = "...Read More";
+    }
+  }
+  
   return (
     <div>
-      YOUR_CODE_HERE
+        {text}
+        {/* {result} */}
+        <a onClick={() => handleClick()}>...Read More</a>
     </div>
   );
 }
