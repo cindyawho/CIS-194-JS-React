@@ -34,25 +34,16 @@ function DisplayParagraph({ text, maxLength }) {
   // ----------------------------------------------------
   
   function handleClick(){
-    if(form == false){
-        setForm(true);
-        console.log(form);
-        let result = text;
-        let aText = "...Read Less";
-    }
-    else if(form == true){
-        setForm(false);
-        console.log(form);
-        let result = text.substr(0, maxLength);
-        let aText = "...Read More";
-    }
+    setForm(!form); 
   }
+
+  const result = form ? text.substr(0, maxLength) : text;
+  const aText = form ? "...Read More" : "...Read Less";
   
   return (
     <div>
-        {text}
-        {/* {result} */}
-        <a onClick={() => handleClick()}>...Read More</a>
+        {result}
+        <a onClick={() => handleClick()}>{aText}</a>
     </div>
   );
 }
