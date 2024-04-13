@@ -33,6 +33,12 @@ const bookmarksReducer = (state, action) => {
 
 function App() {
 
+    const handleInput = evt => {
+        setCheckTerm(evt.target.value);
+        console.log(evt.target.value);
+    };
+    const [checkTerm, setCheckTerm] = React.useState([]);
+
     const [bookmarks, dispatchBookmarks] = React.useReducer(
         bookmarksReducer,
         {
@@ -43,11 +49,14 @@ function App() {
     );
 
     React.useEffect(() => {
+
+        if(!checkTerm) return; //no refetching if there is no checkTerm
+
         dispatchBookmarks(
             {type: "BOOKMARKS_LOADING_INIT"}
         )
         //concatenating url with react for the query
-        fetch(`${bookmarksEndpoint}react`) 
+        fetch(`${bookmarksEndpoint}${checkTerm}`) 
             .then(response => response.json())
             .then(result => {
                 dispatchBookmarks( {
@@ -60,10 +69,21 @@ function App() {
                         type: "BOOKMARKS_LOADING_FAILURE"
                     })
             )
-    }, []);
+    }, [checkTerm]);
 
     return(
         <div>
+            <h1>Input search query</h1>
+            <p>
+                <Input
+                    id="check"
+                    value="Checking for "
+                    onInput={handleInput}
+                    userInput={checkTerm}
+                >
+                    <b>Check: </b>
+                </Input>
+            </p>
             <h1>Links fetched from API</h1>
             <p>
                 {bookmarks.isError && <p>Error just happened ... </p>}
@@ -75,6 +95,14 @@ function App() {
         </div>
     );
 }
+
+const Input = ({ id, value, type = 'text', onInput, userInput, children }) => (
+    <>
+      <label htmlFor={id}>{children} </label>
+      <input id={id} type={type} value={userInput} onChange={onInput} />
+      <p>{value} <b>{userInput}</b></p>
+    </>
+  );
 
 function List({links}) {
     return links.map(item => 
