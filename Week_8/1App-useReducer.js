@@ -24,8 +24,25 @@ new Promise((resolve, reject) => setTimeout(reject, 3000));
 
 const bookmarksReducer = (state, action) => {
     switch(action.type) {
-        case "SET_BOOKMARKS":
-            return action.payload;
+        case "BOOKMARKS_LOADING_INIT":
+            return {
+                ...state,
+                isLoading: true, 
+                isError: false
+            };
+        case "BOOKMARKS_LOADING_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                isError: false,
+                data: action.payload
+            };
+        case "BOOKMARKS_LOADING_FAILURE":
+            return {
+                ...state,
+                isLoading: false,
+                isError: true
+            };
         default:
             throw new Error();
     }
@@ -38,33 +55,41 @@ function App() {
     //const[state, dispatch] where state is the new state, dispatch is the updater that takes in type and action/payload
     const [bookmarks, dispatchBookmarks] = React.useReducer(
         bookmarksReducer,
-        []
-    )
-
-    const[isLoading, setIsLoading] = React.useState(false);
-    const [isError, setIsError] = React.useState(false);
+        {
+            data: [], 
+            isLoading: false, 
+            isError: false 
+        }
+    );
+    //Replacing the two lines below with new code in useReducer
+    // const[isLoading, setIsLoading] = React.useState(false);
+    // const [isError, setIsError] = React.useState(false);
 
     React.useEffect(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
+        dispatchBookmarks(
+            {type: "BOOKMARKS_LOADING_INIT"}
+        )
         getAsynchBookmarks().then( result => {
             // setBookmarks(result.data.x); //replaced by dispatch and payload line below
             dispatchBookmarks( {
-                type: "SET_BOOKMARKS", 
+                type: "BOOKMARKS_LOADING_SUCCESS", 
                 payload: result.data.x,
             });
-
-            setIsLoading(false);
-        }).catch(() => setIsError(true));
+            // setIsLoading(false);
+        }).catch(
+            () => dispatchBookmarks({type: "BOOKMARKS_LOADING_FAILURE"})
+        );
     }, []);
 
     return(
         <div>
             <h1>Please wait 3 seconds</h1>
             <p>
-                {isError && <p>Error just happened ... </p>}
+                {bookmarks.isError && <p>Error just happened ... </p>}
                 {/* (condition) ? exe1 : exe2 */}
                 {
-                    isLoading ? (<p>Loading...</p>) : <List links = {bookmarks}/>
+                    bookmarks.isLoading ? (<p>Loading...</p>) : <List links = {bookmarks.data}/>
                 }
             </p>
         </div>
