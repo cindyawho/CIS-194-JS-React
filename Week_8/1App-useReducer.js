@@ -19,17 +19,37 @@ const getAsynchBookmarks = () =>
             3000
         )
 );
+const bookmarksReducer = (state, action) => {
+    switch(action.type) {
+        case "SET_BOOKMARKS":
+            return action.payload;
+        default:
+            throw new Error();
+    }
+
+};
 
 function App() {
 
-    const [bookmarks, setBookmarks] = React.useState([""]);
+    // const [bookmarks, setBookmarks] = React.useState([""]); //replacing with useReducer
+    //const[state, dispatch] where state is the new state, dispatch is the updater that takes in type and action/payload
+    const [bookmarks, dispatchBookmarks] = React.useReducer(
+        bookmarksReducer,
+        []
+    )
+
     const[isLoading, setIsLoading] = React.useState(false);
     const [isError, setIsError] = React.useState(false);
 
     React.useEffect(() => {
         setIsLoading(true);
         getAsynchBookmarks().then( result => {
-            setBookmarks(result.data.x);
+            // setBookmarks(result.data.x); //replaced by dispatch and payload line below
+            dispatchBookmarks( {
+                type: "SET_BOOKMARKS", 
+                payload: result.data.x,
+            });
+
             setIsLoading(false);
         }).catch(() => setIsError(true));
     }, []);
