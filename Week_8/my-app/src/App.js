@@ -24,9 +24,17 @@ const products = [
 
 // YOUR MAY ADD ANY ADDITIONAL FUNCTIONS HERE IF YOU NEED, NAMELY THE computeTotal(), etc.
 
+function computeTotal(stateInput) {
+  return stateInput;
+}
+
 function reducer(state, action) {
   switch(action.type) {
     // YOUR CODE HERE
+    case "add":
+      computeTotal(state);
+    case "remove":
+      computeTotal(state);
   }
 }
 
@@ -35,6 +43,12 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, []);
 
   // YOUR CODE HERE
+  const add = (product) => {
+    dispatch({type: "add"}, product.price);
+  };
+  const remove = (product) => {
+    dispatch({type: "remove"}, product.price*(-1));
+  };
 
 // --------------------------------------------
 // !!! DO NOT MODIFY BELOW THIS LINE !!!

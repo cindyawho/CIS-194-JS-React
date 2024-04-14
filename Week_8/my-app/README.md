@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Homework Assignment #6: Build a Shopping Cart Using the useReducer Hook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PROBLEM STATEMENT
+You are building a rudimentary shopping cart online. You have THREE (3) items in your initial state. You will use the useReducer React hook for this problem.
 
-## Available Scripts
+<ul>
+    <li>Build a reducer with two types (states): add, remove.</li>
+    <li>There are two buttons, one called Add, another called Remove.</li>
+    <li>Clicking on any one of the buttons triggers your dispatch function with the action object, product. The dispatch is a special function that dispatches an action object.</li>
+    <li>Your dispatch redirects the action object and the current state to the reducer function.</li>
+    <li>The reducer function uses the action object and performs a state update, returning the new state.</li>
+    <li>React then checks whether the new state differs from the previous one. If the state has been updated, React re-renders the component and useReducer() returns the new state value: [newState, ...] = useReducer(...).</li>
+    <li>Remember, the useReducer(reducer, initialState) hook accept TWO (2) arguments: the reducer function and the initial state. The hook then returns an array of TWO (2) items: the current state and the dispatch function.</li>
+</ul>
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## STEPS
+Create a Hello World app from scratch.
+Open src/index.css and add the following styling to it [see index.css]
+Open src/App.js and copy and paste the STARTER CODE to begin your work.
