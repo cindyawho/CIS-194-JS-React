@@ -28,11 +28,15 @@ function reducer(state, action) {
   switch(action.type) {
     // YOUR CODE HERE
     case "add":
-      return [...state, action.product];
-      // computeTotal(state);
+      // console.log([...state]); //logs before new item is added to cart
+      return [...state, action.product]; //get state and add the new product to the end of the array
     case "remove":
-      return [...state, action.product];
-      // computeTotal(state);
+      const index = state.findIndex(item => item == action.product); //find where the first item that is trying to be removed is found
+      if(index != -1) { //if it exists...
+        return [...state.slice(0, index), ...state.slice(index+1)]; // take it out and add the two halves of the array back together
+      }  else{ //if it doesn't exist
+        return state; //just return the array
+      }
   }
 }
 
