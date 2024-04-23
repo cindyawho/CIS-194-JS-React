@@ -59,12 +59,11 @@ function App() {
             {type: "BOOKMARKS_LOADING_INIT"}
         )
         //concatenating url with react for the query
-        fetch(url) 
-            .then(response => response.json())
+        axios.get(url)
             .then(result => {
                 dispatchBookmarks( {
                     type: "BOOKMARKS_LOADING_SUCCESS", 
-                    payload: result.hits
+                    payload: result.data.hits
                 })
             }).catch(
                 () => dispatchBookmarks(
