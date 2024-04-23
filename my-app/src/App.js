@@ -38,7 +38,9 @@ function App() {
         console.log(evt.target.value);
     };
     const [checkTerm, setCheckTerm] = React.useState();
-
+    const [url, setUrl] = React.useState(
+      `${bookmarksEndpoint}${checkTerm}`
+    )
     const [bookmarks, dispatchBookmarks] = React.useReducer(
         bookmarksReducer,
         {
@@ -56,7 +58,7 @@ function App() {
             {type: "BOOKMARKS_LOADING_INIT"}
         )
         //concatenating url with react for the query
-        fetch(`${bookmarksEndpoint}${checkTerm}`) 
+        fetch(url) 
             .then(response => response.json())
             .then(result => {
                 dispatchBookmarks( {
@@ -69,10 +71,10 @@ function App() {
                         type: "BOOKMARKS_LOADING_FAILURE"
                     })
             )
-    }, [checkTerm]);
+    }, [url]);
 
     const handleInputSubmit = () => {
-        
+        setUrl(`${bookmarksEndpoint}${checkTerm}`);
     }
 
     return(

@@ -37,8 +37,10 @@ function App() {
         setCheckTerm(evt.target.value);
         console.log(evt.target.value);
     };
-    const [checkTerm, setCheckTerm] = React.useState([]);
-
+    const [checkTerm, setCheckTerm] = React.useState();
+    const [url, setUrl] = React.useState(
+      `${bookmarksEndpoint}${checkTerm}`
+    )
     const [bookmarks, dispatchBookmarks] = React.useReducer(
         bookmarksReducer,
         {
@@ -56,7 +58,7 @@ function App() {
             {type: "BOOKMARKS_LOADING_INIT"}
         )
         //concatenating url with react for the query
-        fetch(`${bookmarksEndpoint}${checkTerm}`) 
+        fetch(url) 
             .then(response => response.json())
             .then(result => {
                 dispatchBookmarks( {
@@ -69,7 +71,11 @@ function App() {
                         type: "BOOKMARKS_LOADING_FAILURE"
                     })
             )
-    }, [checkTerm]);
+    }, [url]);
+
+    const handleInputSubmit = () => {
+        setUrl(`${bookmarksEndpoint}${checkTerm}`);
+    }
 
     return(
         <div>
@@ -83,6 +89,15 @@ function App() {
                 >
                     <b>Check: </b>
                 </Input>
+            </p>
+            <p>
+                <button
+                type = "button"
+                disabled = {!checkTerm}
+                onClick = {handleInputSubmit}
+                >
+                    Submit
+                </button>
             </p>
             <h1>Links fetched from API</h1>
             <p>
