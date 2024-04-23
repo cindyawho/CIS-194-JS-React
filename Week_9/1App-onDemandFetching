@@ -37,7 +37,7 @@ function App() {
         setCheckTerm(evt.target.value);
         console.log(evt.target.value);
     };
-    const [checkTerm, setCheckTerm] = React.useState();
+    const [checkTerm, setCheckTerm] = React.useState([]);
 
     const [bookmarks, dispatchBookmarks] = React.useReducer(
         bookmarksReducer,
@@ -71,10 +71,6 @@ function App() {
             )
     }, [checkTerm]);
 
-    const handleInputSubmit = () => {
-        
-    }
-
     return(
         <div>
             <h1>Input search query</h1>
@@ -87,15 +83,6 @@ function App() {
                 >
                     <b>Check: </b>
                 </Input>
-            </p>
-            <p>
-                <button
-                type = "button"
-                disabled = {!checkTerm}
-                onClick = {handleInputSubmit}
-                >
-                    Submit
-                </button>
             </p>
             <h1>Links fetched from API</h1>
             <p>
