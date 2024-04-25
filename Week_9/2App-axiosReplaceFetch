@@ -51,26 +51,23 @@ function App() {
         }
     );
 
-    React.useEffect(() => {
+    React.useEffect(async() => {
 
         if(!checkTerm) return; //no refetching if there is no checkTerm
 
-        dispatchBookmarks(
-            {type: "BOOKMARKS_LOADING_INIT"}
-        )
-        //concatenating url with react for the query
-        axios.get(url)
-            .then(result => {
-                dispatchBookmarks( {
-                    type: "BOOKMARKS_LOADING_SUCCESS", 
-                    payload: result.data.hits
-                })
-            }).catch(
-                () => dispatchBookmarks(
-                    {
-                        type: "BOOKMARKS_LOADING_FAILURE"
-                    })
-            )
+        dispatchBookmarks({type: "BOOKMARKS_LOADING_INIT"})
+
+        try{ //now using asunc/await method
+            const result = await axios.get(url); //concatenating url with react for the query
+            dispatchBookmarks( {
+                type: "BOOKMARKS_LOADING_SUCCESS", 
+                payload: result.data.hits
+            });
+        } catch{
+            dispatchBookmarks({
+                type: "BOOKMARKS_LOADING_FAILURE"
+            });
+        }
     }, [url]);
 
     const handleInputSubmit = () => {
