@@ -70,32 +70,19 @@ function App() {
         }
     }, [url]);
 
-    const handleInputSubmit = () => {
+    const handleInputSubmit = event => {
         setUrl(`${bookmarksEndpoint}${checkTerm}`);
+        event.preventDefault();
     }
 
     return(
         <div>
             <h1>Input search query</h1>
-            <p>
-                <Input
-                    id="check"
-                    value="Checking for "
-                    onInput={handleInput}
-                    userInput={checkTerm}
-                >
-                    <b>Check: </b>
-                </Input>
-            </p>
-            <p>
-                <button
-                type = "button"
-                disabled = {!checkTerm}
-                onClick = {handleInputSubmit}
-                >
-                    Submit
-                </button>
-            </p>
+            <MyForm
+                term = {checkTerm}
+                onFormInput = {handleInput}
+                onFormSubmit = {handleInputSubmit}
+            />
             <h1>Links fetched from API</h1>
             <p>
                 {bookmarks.isError && <p>Error just happened ... </p>}
@@ -107,6 +94,29 @@ function App() {
         </div>
     );
 }
+
+const MyForm = ({
+    term, 
+    onFormInput,
+    onFormSubmit
+}) => (
+    <form onSubmit = {onFormSubmit}>
+        <Input
+            id="check"
+            value="Checking for "
+            onInput={onFormInput}
+            userInput={term}
+        >
+            <b>Check: </b>
+        </Input>
+        <button
+        type = "submit"
+        disabled = {!term}
+        >
+            Submit
+        </button>
+    </form>
+);
 
 const Input = ({ id, value, type = 'text', onInput, userInput, children }) => (
     <>
