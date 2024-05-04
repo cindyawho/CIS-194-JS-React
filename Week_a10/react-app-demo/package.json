@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "typescript": "^5.4.5"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack-cli": "^5.1.4"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "magic": "webpack"
   },
   "author": "",
   "license": "ISC"
