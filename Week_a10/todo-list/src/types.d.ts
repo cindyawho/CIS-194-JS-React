@@ -11,3 +11,5 @@ interface Todo {
 
 // That’s because toggleTodo was not an expected prop for our TodoListItem. Let’s add it as an expected prop. While we’re at it, let’s declare a ToggleTodo type in our types.d.ts file:
 type ToggleTodo = (selectedTodo : Todo) => void;
+
+type AddTodo = (text: string) => void;

@@ -29,11 +29,17 @@ function App() {
     });
     setTodos(newTodos);
   };
+
+  const addTodo: AddTodo = (text: string) => {
+    const newTodo = {text, complete: false};
+    setTodos([...todos, newTodo]);
+  };
+  
   return (
     <>
       Cindy's To Do List
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <AddTodoForm />
+      <AddTodoForm addTodo={addTodo} />
     </>
   );
 }
