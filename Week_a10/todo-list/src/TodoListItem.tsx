@@ -16,20 +16,19 @@ interface Props {
 // Once we’ve defined our props, we can declare our TodoListItem as a functional component (React.FC) and then pass our Props as a generic.
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
     return (
-        <li>
-            <label 
-            style={{textDecoration: todo.complete ? 'line-through' : undefined}}
+      <li>
+        <label
+          style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
         >
-            <input 
-                type="checkbox" 
-                checked={todo.complete} 
-                onClick={() => {
-                    toggleTodo(todo);
-                    // console.log("Click!");
-                }}
-            />{' '} 
-            {todo.text}
+          <input
+            type="checkbox"
+            checked={todo.complete}
+            onClick={() => {
+              toggleTodo(todo);
+            }}
+          />{' '}
+          {todo.text}
         </label>
-        </li>
+      </li>
     );
-};
+  };

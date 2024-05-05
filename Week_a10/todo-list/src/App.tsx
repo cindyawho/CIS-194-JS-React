@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TodoListItem } from './TodoListItem';
+import { TodoList } from './TodoList';
 
 const initialTodos: Todo[] = [
   {
@@ -36,10 +36,7 @@ function App() {
   return (
     <>
       Cindy's To Do List
-      <ul>
-        <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-        <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
-      </ul>
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </>
   );
 }
