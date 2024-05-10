@@ -14,9 +14,9 @@ function Phone(props) {
     return <p>{props.phone}</p>
 }
 
-export default function BusinessCard() {
+export default function BusinessCard(props) {
     return(
-        <div className="light">
+        <div className={props.darkMode ? "dark" : "light"}>
             <Name name = "Cindy"/>
             <Title title = "Educator"/>
             <Email email = "cindyandcode@gmail.com"/>

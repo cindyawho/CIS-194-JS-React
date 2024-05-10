@@ -17,7 +17,10 @@ function App() {
         darkMode={darkMode}
         toggleDarkMode = {toggleDarkMode}
       />
-      <BusinessCard />
+      <BusinessCard 
+        darkMode={darkMode}
+        toggleDarkMode = {toggleDarkMode}
+      />
     </>
   );
 }
