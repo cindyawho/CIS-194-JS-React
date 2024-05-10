@@ -16,7 +16,7 @@ function Phone(props) {
 
 export default function BusinessCard() {
     return(
-        <div>
+        <div className="light">
             <Name name = "Cindy"/>
             <Title title = "Educator"/>
             <Email email = "cindyandcode@gmail.com"/>
