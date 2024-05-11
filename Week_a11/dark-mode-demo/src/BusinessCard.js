@@ -14,9 +14,27 @@ function Phone(props) {
     return <p>{props.phone}</p>
 }
 
+const dark = {
+    height: '200px',
+    width: '300px',
+    color: 'white',
+    backgroundColor: 'black',
+    padding: '32px 64px',
+    textAlign: 'left',
+}
+
+const light = {
+    height: '200px',
+    width: '300px',
+    color: 'black',
+    backgroundColor: 'white',
+    padding: '32px 64px',
+    textAlign: 'left',
+}
+
 export default function BusinessCard(props) {
     return(
-        <div className={props.darkMode ? "dark" : "light"}>
+        <div style={props.darkMode ? dark : light}>
             <Name name = "Cindy"/>
             <Title title = "Educator"/>
             <Email email = "cindyandcode@gmail.com"/>
