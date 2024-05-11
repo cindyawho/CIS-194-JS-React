@@ -6,7 +6,7 @@ function Description(props) {
     return <p class={props.className}>{props.text} </p>
 }
 
-export default function Info() {
+export default function About() {
     return(
         <div className="about">
             <Title text = "About" className="about--title"/>

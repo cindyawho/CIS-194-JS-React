@@ -36,7 +36,17 @@ p{
   margin-top: 0;
 }
 /* ~~~~~~~~~~~~~~~~ Funfacts ~~~~~~~~~~~~~~~~ */
+.funfacts{
+  text-align: left;
+}
 
+.funfacts--title{
+  margin-bottom: 5px;
+}
+
+.funfacts--description{
+  margin-top: 0;
+}
 
 
 /* ~~~~~~~~~~~~~~~~ Buttons ~~~~~~~~~~~~~~~~ */
