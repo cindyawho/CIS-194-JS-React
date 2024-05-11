@@ -1,5 +1,8 @@
+#root{
+}
+
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 p{
@@ -9,4 +12,20 @@ p{
 .Card {
   text-align: center;
   padding: 1rem;
+  width: 15rem;
+  margin: 0 auto;
 }
+
+/* ~~~~~~~~~~~~~~~~ Info ~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~ Funfacts ~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~ Buttons ~~~~~~~~~~~~~~~~ */
