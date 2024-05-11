@@ -1,8 +1,9 @@
-#root{
-}
-
 h1 {
   font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
 }
 
 p{
@@ -17,13 +18,23 @@ p{
 }
 
 /* ~~~~~~~~~~~~~~~~ Info ~~~~~~~~~~~~~~~~ */
-
+.info--title{
+  font-style: italic;
+}
 
 
 /* ~~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~~ */
+.about{
+  text-align: left;
+}
 
+.about--title{
+  margin-bottom: 5px;
+}
 
-
+.about--description{
+  margin-top: 0;
+}
 /* ~~~~~~~~~~~~~~~~ Funfacts ~~~~~~~~~~~~~~~~ */
 
 

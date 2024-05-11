@@ -7,7 +7,7 @@ function Name(props) {
 }
 
 function Title(props) {
-    return <p>{props.title}</p>
+    return <p class={props.className}>{props.title}</p>
 }
 
 const imageClass = {
@@ -20,7 +20,7 @@ export default function Info() {
         <div>
             <Image image = "https://i.ibb.co/J7wYDHL/Screenshot-2024-03-06-181138.png" alt="profile picture in art form" style={imageClass}/>
             <Name name = "Cindy Andrade"/>
-            <Title title = "Educator and Web Developer"/>
+            <Title title = "Educator and Web Developer" className="info--title"/>
         </div>  
     )
 }
