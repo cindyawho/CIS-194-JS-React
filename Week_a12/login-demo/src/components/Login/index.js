@@ -1,15 +1,22 @@
 import React, {useState} from 'react';
 
-function fetchToken(creds) {
-
+async function fetchToken(creds) {
+    return fetch('http://localhost:8080/login', {
+        method: 'POST',
+        header: {
+            'Content-Type' : 'application/json'
+        }, 
+        body: JSON.stringify(creds)
+    }).then(data => data.json());
 }
 
 function Login( {setToken} ) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
-    const handleSubmit = (evt) => {
-        const token = fetchToken({
+    const handleSubmit = async evt => {
+        evt.preventDefault();
+        const token = await fetchToken({
             username, 
             password,
         });
@@ -19,7 +26,7 @@ function Login( {setToken} ) {
     return(
         <div className='login-wrapper'>
             <h1>Please Log In</h1>
-            <form onSubmit = {{handleSubmit}}>
+            <form onSubmit = {handleSubmit}>
                 <label>
                     <p>Username</p>
                     <input type="text" onChange={evt => setUserName(evt.target.value)} />
