@@ -21,8 +21,13 @@ function App() {
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
       />
-      <Info />
-      <About />
+      <Info 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
+      <About 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}/>
       <Funfacts />
       <Buttons />
     </div>

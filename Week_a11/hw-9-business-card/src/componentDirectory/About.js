@@ -6,11 +6,11 @@ function Description(props) {
     return <p class={props.className}>{props.text} </p>
 }
 
-export default function About() {
+export default function About(props) {
     return(
-        <div className="about light">
+        <div className = {props.darkMode ? "about dark" : "about light"}>
             <Title text = "About" className="about--title"/>
-            <Description text = "Hello! I am Cindy. I have been teaching math for about 4 years now and am excited to continue my coding journey." className="about--description"/>
-        </div>  
+            <Description text = "Hello! I am Cindy. I have been teaching math for about 4 years now and am excited to continue my coding journey." className = {props.darkMode ? "about--description dark" : "about--description light"}/>
+        </div>
     )
 }

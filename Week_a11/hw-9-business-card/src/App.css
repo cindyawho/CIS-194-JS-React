@@ -1,8 +1,3 @@
-div.light {
-  color: black;
-  background-color: white;
-}
-
 h1 {
   font-size: 2rem;
 }
@@ -11,20 +6,39 @@ h2 {
   font-size: 1.25rem;
 }
 
-p{
+p, p.light{
   color: navy;
+}
+
+p.dark{
+  color: white;
+}
+
+div.light {
+  color: black;
+  background-color: white;
+}
+div.dark {
+  color: white;
+  background-color: black;
 }
 
 .Card {
   text-align: center;
   padding: .25rem;
-  width: 15rem;
+  width: 21rem;
   margin: 0 auto;
 }
 
 /* ~~~~~~~~~~~~~~~~ Info ~~~~~~~~~~~~~~~~ */
-.info--title{
+.info--title--dark{
   font-style: italic;
+  color: yellow;
+}
+
+.info--title--light{
+  font-style: italic;
+  color: rgb(0, 0, 78);
 }
 
 
@@ -34,11 +48,11 @@ p{
 }
 
 .about--title{
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .about--description{
-  margin-top: 0;
+  padding-top: 0;
 }
 /* ~~~~~~~~~~~~~~~~ Funfacts ~~~~~~~~~~~~~~~~ */
 .funfacts{
@@ -46,11 +60,11 @@ p{
 }
 
 .funfacts--title{
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .funfacts--description{
-  margin-top: 0;
+  padding-top: 0;
 }
 
 
