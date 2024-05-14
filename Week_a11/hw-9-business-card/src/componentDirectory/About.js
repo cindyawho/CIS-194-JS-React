@@ -8,7 +8,7 @@ function Description(props) {
 
 export default function About() {
     return(
-        <div className="about">
+        <div className="about light">
             <Title text = "About" className="about--title"/>
             <Description text = "Hello! I am Cindy. I have been teaching math for about 4 years now and am excited to continue my coding journey." className="about--description"/>
         </div>  

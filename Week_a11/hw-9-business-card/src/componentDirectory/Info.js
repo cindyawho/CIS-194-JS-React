@@ -15,9 +15,9 @@ const imageClass = {
     height:'auto'
 }
 
-export default function Info() {
+export default function Info(props) {
     return(
-        <div>
+        <div className="light">
             <Image image = "https://i.ibb.co/J7wYDHL/Screenshot-2024-03-06-181138.png" alt="profile picture in art form" style={imageClass}/>
             <Name name = "Cindy Andrade"/>
             <Title title = "Educator and Web Developer" className="info--title"/>

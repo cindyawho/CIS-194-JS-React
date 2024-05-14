@@ -7,9 +7,9 @@ const buttonClass = {
     height:'50px'
 }
 
-export default function Buttons() {
+export default function Buttons(props) {
     return(
-        <div class="buttons">
+        <div class="buttons light">
             <Button 
                 image = "https://i.ibb.co/g6knMdP/email-button.png" 
                 alt="email icon" 
