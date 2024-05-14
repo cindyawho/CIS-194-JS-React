@@ -1,10 +1,10 @@
-export default function ToggleSelector() {
+export default function ToggleSelector(props) {
     return (
-        <nav>
+        <nav className={props.darkMode ? "dark" : ""}>
             <div className="toggler">
                 <p className="toggler--light">Light</p>
                 <div className="toggler--slider">
-                    <div className="toggler--slider--circle">
+                    <div className="toggler--slider--circle" onClick={props.toggleDarkMode}>
                         
                     </div>
                 </div>

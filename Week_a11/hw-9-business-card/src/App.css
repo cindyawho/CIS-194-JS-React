@@ -79,6 +79,10 @@ nav {
   height: 0px;
 }
 
+nav.dark {
+  background-color: black;
+}
+
 .toggler {
   display: flex;
   align-items: center;
@@ -103,7 +107,9 @@ nav {
   box-sizing: content-box;
 }
 
-.toggler--slider {
+nav.dark .toggler--slider{
+  border-color: white;
+  background-color: #F5F5F5;
   justify-content: flex-end;
 }
 
@@ -114,10 +120,23 @@ nav {
   border-radius: 50%;
 }
 
+nav.dark .toggler--slider--circle{
+  border-color: #F5F5F5;
+  background-color: black;
+}
+
 .toggler--light {
   color:black;
 }
 
+nav.dark .toggler--light {
+  color: #918E9B
+}
+
 .toggler--dark {
   color: #D5D4D8;
+}
+
+nav.dark .toggler--dark {
+  color: #FFFFFF;
 }
