@@ -17,7 +17,7 @@ const imageClass = {
 
 export default function Info(props) {
     return(
-        <div className={props.darkMode ? "dark" : "light"}>
+        <div className={props.darkMode ? "info dark" : "info light"}>
             <Image image = "https://i.ibb.co/J7wYDHL/Screenshot-2024-03-06-181138.png" alt="profile picture in art form" style={imageClass}/>
             <Name name = "Cindy Andrade"/>
             <Title title = "Educator and Web Developer" className={props.darkMode ? "info--title--dark" : "info--title--light"} />

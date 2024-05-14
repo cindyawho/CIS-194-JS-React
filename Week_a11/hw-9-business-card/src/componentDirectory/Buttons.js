@@ -9,7 +9,7 @@ const buttonClass = {
 
 export default function Buttons(props) {
     return(
-        <div class="buttons light">
+        <div className = {props.darkMode ? "buttons dark" : "buttons light"}>
             <Button 
                 image = "https://i.ibb.co/g6knMdP/email-button.png" 
                 alt="email icon" 

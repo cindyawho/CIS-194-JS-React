@@ -27,9 +27,16 @@ function App() {
       />
       <About 
         darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}/>
-      <Funfacts />
-      <Buttons />
+        toggleDarkMode={toggleDarkMode}
+      />
+      <Funfacts 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
+      <Buttons 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
     </div>
   );
 }

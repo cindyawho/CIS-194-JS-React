@@ -8,11 +8,11 @@ function Description(props) {
 
 export default function Funfacts(props) {
     return(
-        <div className="funfacts light">
+        <div className = {props.darkMode ? "funfacts dark" : "funfacts light"}>
             <Title text = "Fun Facts" className="funfacts--title"/>
             <Description 
                 text = "I love to read, listen to musical soundtracks, and code. I've read the Percy Jackson series 7 times! My latest musical obsession is Epic: The Musical." 
-                className="funfacts--description"
+                className = {props.darkMode ? "funfacts--description dark" : "funfacts--description light"}
             />
         </div>  
     )
