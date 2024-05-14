@@ -3,6 +3,7 @@ import LoginPage from '../Login';
 import LandingPage from '../Landing';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import NavigationPage from "../Navigation";
+import * as ROUTES from "../../constants/paths";
 
 function App() {
     return(
@@ -11,8 +12,8 @@ function App() {
             <BrowserRouter>
                 <NavigationPage />
                 <Routes>
-                    <Route path="/login" element ={<LoginPage />} />
-                    <Route path="/home" element ={<LandingPage />} />
+                    <Route path={ROUTES.LOGIN} element ={<LoginPage />} />
+                    <Route path={ROUTES.HOME} element ={<LandingPage />} />
                 </Routes>
             </BrowserRouter>
         </>
