@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login() {
+function Login( {setToken} ) {
     return(
         <div className='login-wrapper'>
             <h1>Please Log In</h1>
