@@ -9,11 +9,13 @@ const NotesListPage = () => {
     useEffect(() => {
         getNotes()
     }, [])
+    // the ", []" is super important to leave an array of dependencies to not cause hundred of requests!
 
     let getNotes = async () => {
         let response = await fetch('http://localhost:8000/notes/');
         let data = await response.json();
-        console.log("data: ", data);
+        // console.log("data: ", data);
+        setNotes(data)
     }
 
     return (

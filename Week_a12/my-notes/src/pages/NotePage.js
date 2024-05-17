@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
   useParams
 } from "react-router-dom";
@@ -12,6 +12,17 @@ const NotePage = (props) => {
 
   // let note =  notesData.find(note => note.id === Number(noteId));
   let [note, setNote] = useState(null);
+
+  useEffect(() => {
+    getNote()
+  }, [noteId])
+  //anytime "noteId" changes, update the site
+
+  let getNote = async () => {
+    let response = await fetch(`http://localhost:8000/notes/${noteId}`)
+    let data = await response.json()
+    setNote(data)
+  }
 
   return (
     <div className='note'>
