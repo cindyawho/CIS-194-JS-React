@@ -4,11 +4,8 @@ import {
 } from "react-router-dom";
 
 const NotePage = (props) => {
-  // let noteId = match.params.id;
-  // console.log("HELLO!!!");
-  // console.log("Props: ", props);
-  let {userId} = useParams();
-  console.log("userId: ", userId);
+  let noteId = useParams().userId;
+  console.log("noteId: ", noteId);
   return (
     <div>
         <h1>This is a single note page.</h1>
