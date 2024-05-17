@@ -247,3 +247,15 @@ a {
 .note textarea::-webkit-scrollbar {
   display: none;
 }
+
+/*==============================
+=>  Footer
+================================*/
+
+.app-footer{
+  background-color: black;
+  color: white;
+  display: block;
+  bottom: 0;
+  text-align: center;
+}

@@ -10,6 +10,7 @@ import "./App.css";
 import Header from "./components/Header";
 import NotesListPage from "./pages/NotesListPage";
 import NotePage from "./pages/NotePage";
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </Routes>
         </div>
       </div>
+      <Footer/>
     </Router>
   );
 }
