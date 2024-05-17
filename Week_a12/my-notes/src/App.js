@@ -5,10 +5,10 @@ import {
   Routes
 } from "react-router-dom";
 
-import './App.css';
-import Header from './components/Header';
-import NotesListPage from './pages/NotesListPage';
-import NotePage from './pages/NotePage'
+import "./App.css";
+import Header from "./components/Header";
+import NotesListPage from "./pages/NotesListPage";
+import NotePage from "./pages/NotePage";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' exact element={<NotesListPage />} />
-          <Route path='/note' element={<NotePage />} />
+          <Route path='/note/:id' element={<NotePage />} />
         </Routes>
       </div>
     </Router>
