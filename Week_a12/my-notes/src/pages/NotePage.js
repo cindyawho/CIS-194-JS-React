@@ -61,11 +61,11 @@ const NotePage = (props) => {
   let handleSubmit = () => {
     if(noteId !== 'new' && !note.body){
       deleteNote()
-    } else if(noteId === 'new'){
-      updateNote();
     } else if(noteId === 'new' && note !== null){
       createNote();
-    }
+    } else if(noteId === 'new'){
+      updateNote();
+    } 
     navigate('/');
   }
 
