@@ -3,6 +3,8 @@ import {
   useParams
 } from "react-router-dom";
 import notesData from '../assets/data'
+import { Link } from 'react-router-dom'
+import { ReactComponent as ArrowLeft } from '../assets/arrow-left.svg'
 
 const NotePage = (props) => {
   let noteId = useParams().userId;
@@ -11,8 +13,14 @@ const NotePage = (props) => {
   let note =  notesData.find(note => note.id === Number(noteId));
 
   return (
-    <div>
-        <h1>This is a single note page.</h1>
+    <div className='note'>
+        <div className='note-header'>
+          <h3>
+            <Link to="/">
+              <ArrowLeft />
+            </Link>
+          </h3>
+        </div>
         <p>{note?.body}</p>
     </div>
   )
