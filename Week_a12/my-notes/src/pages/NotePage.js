@@ -63,7 +63,7 @@ const NotePage = (props) => {
       deleteNote()
     } else if(noteId === 'new' && note !== null){
       createNote();
-    } else if(noteId === 'new'){
+    } else if(noteId !== 'new'){
       updateNote();
     } 
     navigate('/');
