@@ -28,17 +28,16 @@ const NotePage = (props) => {
   let updateNote = async () => {
     await fetch(`http://localhost:8000/notes/${noteId}`, {
       method: 'PUT',
-      header:{
+      headers:{
         'Content-Type': 'application/json'
       }, 
-      body: JSON.stringify({...note, 'updated':new Date()})
+      body: JSON.stringify({...note, 'updated': new Date()})
     })
   }
-
+  const navigate = useNavigate();
   let handleSubmit = () => {
     updateNote();
-    let history = useNavigate();
-    history.push('/');
+    navigate('/');
   }
 
   return (
