@@ -18,7 +18,7 @@ function Login( {setToken} ) {
         evt.preventDefault();
         const token = await fetchToken({
             username, 
-            password,
+            password
         });
         setToken(token);
     }
