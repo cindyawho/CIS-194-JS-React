@@ -13,6 +13,7 @@ async function fetchToken(creds) {
 function Login( {setToken} ) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState(false);
 
     const handleSubmit = async evt => {
         evt.preventDefault();
@@ -21,6 +22,16 @@ function Login( {setToken} ) {
             password
         });
         setToken(token);
+    }
+
+    const validateChar = evt => {
+        //javascript.prototype.test()
+        //regex.test(str)
+    if(/\*/.test(username)) {
+            setError(true);
+            return;
+        }
+        setError(false);
     }
 
     return(
@@ -32,8 +43,17 @@ function Login( {setToken} ) {
                     <input 
                         type="text" 
                         onChange={evt => setUserName(evt.target.value)} 
+                        onFocus={()=>setError(true)}
+                        onBlur={()=>setError(false)}
                     />
                 </label>
+                {error && <div>
+                    <span>All alphanumeric characters</span>
+                    <br/>
+                    <span>Invalid character: *</span>
+                    
+                </div>
+                }
                 <label>
                     <p>Password</p>
                     <input 
@@ -43,7 +63,7 @@ function Login( {setToken} ) {
                     />
                 </label>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" onClick={validateChar}>Submit</button>
                 </div>
             </form>
         </div>
