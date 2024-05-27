@@ -29,11 +29,18 @@ function Login( {setToken} ) {
             <form onSubmit = {handleSubmit}>
                 <label>
                     <p>Username</p>
-                    <input type="text" onChange={evt => setUserName(evt.target.value)} />
+                    <input 
+                        type="text" 
+                        onChange={evt => setUserName(evt.target.value)} 
+                    />
                 </label>
                 <label>
                     <p>Password</p>
-                    <input type="password" onChange={evt => setPassword(evt.target.value)}/>
+                    <input 
+                        type="password" 
+                        autoComplete="off"
+                        onChange={evt => setPassword(evt.target.value)}
+                    />
                 </label>
                 <div>
                     <button type="submit">Submit</button>
