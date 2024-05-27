@@ -1,0 +1,79 @@
+Notes based on video linked below
+<a href="https://www.youtube.com/watch?v=u72H_zZzkcw">Video Link</a>
+
+Intro 
+detailed, longer video, watch the bits and pieces that you need. 
+
+Types of Web Developers 
+Front-End Developer, Back-End Developer, Full Stack-Developer
+front: user interface made by html, css, js, etc. 
+back: programming languages, functionality, databases, Creating APIs, deploying to servers
+full-stack: does both but can focus a bit more
+
+The Essentials
+Basic tools: 
+* computer and OS (at least 8GB of RAM)
+* operating system (mac, windows, linux)
+* text editor/IDE (VS Code, Sublime Text, VIM, Atom)
+* Web Browser (chrome, firefox, edge, safari, brave)
+* terminal (default, iTerm, GitBash, Powershell, WSL, Hyper)
+
+HTML & CSS
+* HTML Layout, Tags Attributes
+* Semantic Elements !! Learn these because it is more accessible for screenreaders and is more organized
+* IDs vs Classes (ids for unique elements, classes for styling)
+* CSS Fundamentals 
+* CSS Specificity (when selectors overwrite each other)
+* Flexbox & CSS Grid
+* Responsive Layouts
+
+JavaScript
+* Learn the basics
+* Browser Environment (window object, execution context)
+* Document Object Model 
+* ES6+ Features
+* Array Methods
+* Asynch JS & HTTP
+
+Layout and Styling tools
+* SASS - elegant variables, nesting, functions, etc. 
+* Post CSS - uses JS plugins, usually used with Webpack
+
+CSS Frameworks
+* these save time when creating or styling layouts
+* Tailwind (low-level utility framework)
+* Bootstrap
+* Materialize
+* Bulma
+
+Design Software
+* Good to know at least the basics of the design software and how to create a basic layout
+* Adobe XD
+* Figma (recommended for beginners)
+* Sketch (mac only)
+* Invision (great for prototyping)
+
+Tools and Utilities
+* Git and Github (version control)
+* Broswer Developer Tools (elements, console, app, network tabs)
+* NPM (Node packager manager)
+* Markdown (lightweight markup language, used in many areas)
+* Editor / IDE Extensions (Emmet Prettier, ES Lint)
+* HTTP Clients (Axioms, Postman, CURL)
+
+Front End Deployment
+* Domain Names
+* Hosting
+* Options: Netlify, Vercel, Github Pages, CPanel
+
+Foundational Front-End Developer
+* Set up basic dev Environment
+* Create layouts with HTML/CSS
+* Understand simple design principles
+* Javascript and the DOM
+* Fetch and HTTP
+* Version control
+* Basic Deployment
+
+Your Next Path
+* 
