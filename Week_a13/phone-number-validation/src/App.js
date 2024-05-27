@@ -11,10 +11,10 @@ function App() {
 
   const validate = (event) => {
     event.preventDefault();
-    if(number > 5){
+    if(number.match(/^\(?([0-9]{3})\)?([ -]?)([0-9]{3})([ -]?)([0-9]{4})$/)){
       setMessage("Valid Phone Number");
     } else {
-      setMessage("Error: Invalid Phone Number");
+      setMessage("Invalid Phone Number");
     }
     // console.log(props)
     return;
