@@ -3,18 +3,16 @@ function App() {
   return (
     <div>
       <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Phone Number Validation</h1>
+        <h2>Phone Number Entered:</h2>
       </header>
+        <p>
+          Enter Phone Number Below:
+        </p>
+        <form>
+          <input type="text"></input>
+          <button>Validate</button>
+        </form>
     </div>
   );
 }
