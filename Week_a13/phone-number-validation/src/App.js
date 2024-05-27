@@ -2,10 +2,22 @@ import React, {useState} from 'react'
 
 function App() {
   const [number, setNumber] = React.useState("");
+  const[message, setMessage] = React.useState("Test");
 
   const update = evt => {
     setNumber(evt.target.value);
     return number
+  }
+
+  const validate = (event) => {
+    event.preventDefault();
+    if(number > 5){
+      setMessage("Valid Phone Number");
+    } else {
+      setMessage("Error: Invalid Phone Number");
+    }
+    // console.log(props)
+    return;
   }
 
   return (
@@ -19,7 +31,8 @@ function App() {
         </p>
         <form>
           <input type="text" onChange={update}></input>
-          <button>Validate</button>
+          <p>{message}</p>
+          <button onClick={validate}>Validate</button>
         </form>
     </div>
   );
