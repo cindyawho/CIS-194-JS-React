@@ -6,12 +6,12 @@ The full-stack react framework NextJS seems very useful since it has become very
 
 Backend - Service
 * Language?
-I would use ____ language because _____.
+I would use Node.js language because it can be useful to use one language in both front-end and back-end needs. Considering that the notes app is currently just text-based, node.js is perfect. If we wanted to allow users to start adding videos or more complicated notes, I would use a different server-side language. 
 * Framework? 
-
+As I am considering using node.js, I would use a framework such as Express or Fastify as they work well with node.js. Express is the most popular and makes it easy to integrate other packages. 
 * How are you going to connect to your database? 
-I would connect my database by ______ because _____. 
+I would connect my database using MongoDB because this works very well with Express. Also, since I feel comfortable with JSON-like documents, MongoDB is a good option.
 
 Backend - database
 * Relational or NoSQL? Why?
-I would want to use _____ because _____. 
+I would want to use noSQL because it is more flexible since it can store both structured and unstructured data. 

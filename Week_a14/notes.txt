@@ -155,7 +155,10 @@ Front-End Superstar
 * Optional: TypeScript, JamStack tech, Testing
 
 Server-Side Languages
-* 
+* choose a language after trying a few out to see what feels right
+* check job listings
+* learn fundamentals
+* Examples: Node.js is js runtime and can be run on server; it's popular because it can be used front end, backend, great for apis; not good for heavy tasks or video renderings, etc. 
 
 Server-side Frameworks 
-* 
+* node.js => express, fastify, nestjs, adonis
