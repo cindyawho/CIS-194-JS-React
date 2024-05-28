@@ -71,9 +71,91 @@ Foundational Front-End Developer
 * Create layouts with HTML/CSS
 * Understand simple design principles
 * Javascript and the DOM
-* Fetch and HTTP
-* Version control
+* Fetch and HTTP (methods and status codes)
+* Version control (git and github)
 * Basic Deployment
 
 Your Next Path
+* Web Design (FE HTML/CSS)
+* Server-Side/Back-End (BE or FS)
+* Front-End Framework and Tooling (FE or FS)
+* Sharpen your javascript (FE, BE, FS)
+
+Front-End Frameworks
+* help you easily create modern websites and interfaces in organized way
+* interfaces are created using components
+* state is very common in these
+* server rended content
+* Options: React, VUE, Angular
+
+React
+* backed by meta
+* popular
+* great resources and communities
+* we might want to use following pieces of ecosystem: create react app, react router, jsx, context api, redux, hooks, xstate, nextjs, gatsby
+
+VUE
+* not backed by large company
+* easy learning curve
+* gaining popularity
+
+Angular 
+* backed by google
+* steep learning curve
+* good for complex projects
+
+Svelte
+* compiles into JavaScript
+* very fast, easy
+
+SolidJS
+* reactive UI library
+* similar to React
+
+Typescript
+* like js, dynamic types of variables
+* 
+
+UI Kits and Component libraries
+* libraries with pre-defined styled components that you can use in your UI
+* React
+* VUE (Vuetify)
+* Angular
+* Svelte
+
+Testing
+* unit testing (individual units)
+* integration testing
+* end to end testing
+* performance testing
+* Helper options: Jest for JS, Robot for Python, MSTest for C#, Native for react
+
+Web APIs
+* Canvas APIs (Dynamic graphics and visualization - good for games)
+* GeoLocation (get a user's location)
+* Speech API (speech recognition)
+* Audio and video API
+* Web RTC (real time communication with audio/video)
+* Local Storage (store data in browser)
+
+Full-Stack Frameworks
+* become very popular to render some things on the client and some on the server 
+* benefits to servers
+* Options: 
+* * NextJS uses react, file based routing, api routes, data fetching
+* * Remix user react, native form component, loading states
+
+Static Site Generators
+* used to make fast and optimized websites
+
+Front-End Superstar
+* know front-end framework well (understand components and state)
+* HTTP/APIs (comfortable fetching and sending from and to APIs)
+* Full stack / SSR framework is becoming a necessity
+* Optional: TypeScript, JamStack tech, Testing
+
+Server-Side Languages
+* 
+
+Server-side Frameworks 
 * 

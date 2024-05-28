@@ -1,0 +1,17 @@
+Front End - React
+* Besides React, what other JavaScript libraries do you need?
+I would need a testing library, such as Jest to ensure that my app works as expected. While it is not always done by developers, testing is recommended to make sure you have a quality app that runs as you want it to. 
+I would also like to use jQuery Mobile in order to create a responsive user interface system as suggested in the video. As developers, we should understand how to make responsive layouts and this library can help. 
+The full-stack react framework NextJS seems very useful since it has become very popular so there will be a lot of support for its file-based routing and data fetching. So I would try to use that framework. 
+
+Backend - Service
+* Language?
+I would use ____ language because _____.
+* Framework? 
+
+* How are you going to connect to your database? 
+I would connect my database by ______ because _____. 
+
+Backend - database
+* Relational or NoSQL? Why?
+I would want to use _____ because _____. 
