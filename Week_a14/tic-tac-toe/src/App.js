@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ToggleSelector from './ToggleSelector';
 
 function Square({value, onSquareClick}) {
   return (
@@ -57,21 +58,53 @@ function Board( { xIsNext, squares, onPlay }) {
 
 export default function Game(){
   const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [historyReverse, setHistoryReverse] = useState([Array(9).fill(null)]);
+  const [chooseHistory, setChooseHistory] = useState(history);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
+  const [orderMode, setOrderMode] = useState(false);
+  function toggleOrderMode(orderMode) {
+    setOrderMode(orderMode => !orderMode);
+    // console.log("I'm right here")
+    // console.log(orderMode);
+    if(orderMode) {
+      setChooseHistory(history);
+      console.log("Set choose History: ", history);
+    } else {
+      setChooseHistory(historyReverse);
+    }
+  }
+
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
+    console.log("History: ", history);
+    setHistoryReverse(nextHistory.toReversed());
+    console.log("Reversed History: ", historyReverse);
     setCurrentMove(nextHistory.length - 1);
+    if(orderMode) {
+      setChooseHistory(nextHistory);
+      console.log("Set choose History: ", history);
+    } else {
+      setChooseHistory(nextHistory.toReversed());
+    }
   }
-
+  
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
+  
+
+  // if(!orderMode) {
+  //   console.log("It's working");
+  // } else{
+  //   console.log("!gnikrow s'tI");
+  // }
+
+  const moves = chooseHistory.map((squares, move) => {
     let description;
     if (move > 0) {
       description = "Go to move #" + move;
@@ -83,17 +116,27 @@ export default function Game(){
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
-  })
+    }
+  )
 
+      
   return(
-    <div className='game'>
-      <div className='game-board'>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+    <>
+      <div className='game'>
+        <div className='game-board'>
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        </div>
+        <div className='game-info'>
+          <ol>{moves}</ol>
+        </div>
       </div>
-      <div className='game-info'>
-        <ol>{moves}</ol>
-      </div>
-    </div>
+
+      <ToggleSelector 
+        orderMode={orderMode}
+        toggleOrderMode = {toggleOrderMode}
+      />
+
+    </>
   )
 }
 

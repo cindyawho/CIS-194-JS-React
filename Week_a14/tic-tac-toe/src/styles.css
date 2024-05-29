@@ -89,3 +89,80 @@
     margin-left: 20px;
   }
   
+
+  /************************* Toggler styles *************************/
+  nav {
+    height: 200px;
+    width: 364px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px 32px;
+    margin-top: 25px;
+    height: 0px;
+  }
+  
+  nav.off {
+    background-color: black;
+  }
+
+  .toggler {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggler p {
+    font-size: 0.625rem;
+    font-weight: 600;
+  }
+  
+  .toggler--slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+  }
+  
+  .toggler--slider {
+    justify-content: flex-end;
+  }
+  
+  nav.off .toggler--slider{
+    border-color: white;
+    background-color: #F5F5F5;
+  }
+  
+  .toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  nav.off .toggler--slider--circle{
+    border-color: #F5F5F5;
+    background-color: black;
+  }
+  
+  .toggler--on {
+    color:black;
+  }
+  
+  nav.off .toggler--on {
+    color: #918E9B
+  }
+  
+  .toggler--off {
+    color: #D5D4D8;
+  }
+  
+  nav.off .toggler--off {
+    color: #FFFFFF;
+  }
