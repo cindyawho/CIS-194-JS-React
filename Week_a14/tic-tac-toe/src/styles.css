@@ -89,3 +89,7 @@
     margin-left: 20px;
   }
   
+  .toggleButton {
+    position: relative;
+    top: 30px;
+  }

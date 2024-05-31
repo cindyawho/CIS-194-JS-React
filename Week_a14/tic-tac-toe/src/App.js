@@ -1,4 +1,21 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+
+const ToggleButton = () => {
+  const [isToggled, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!isToggled);
+  }
+
+  return (
+    <button 
+      className='toggleButton'
+      onClick={handleToggle}
+    >
+      {isToggled ? 'ON' : 'OFF'}
+    </button>
+  )
+}
 
 function Square({value, onSquareClick}) {
   return (
@@ -86,6 +103,7 @@ export default function Game(){
   })
 
   return(
+    <>
     <div className='game'>
       <div className='game-board'>
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
@@ -94,6 +112,10 @@ export default function Game(){
         <ol>{moves}</ol>
       </div>
     </div>
+    <div>
+      <ToggleButton />
+    </div>
+    </>
   )
 }
 
