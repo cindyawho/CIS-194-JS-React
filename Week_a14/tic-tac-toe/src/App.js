@@ -71,40 +71,42 @@ function Board( { xIsNext, squares, onPlay }) {
   );
 }
 
-function MovesList({history, jumpTo}) {
-  const moves =  history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
-    } else {
-      description = "Go to game start";
-    }
-    return (
-      <li key ={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
-    );
-  })
-  const moves2 = history.map((squares, move) => {
-    const reverseIndex = history.length - 1 - move;
-    let description;
-    if (reverseIndex > 0) {
-      description = "Go to move #" + reverseIndex;
-    } else {
-      description = "Go to game start";
-    } 
-    return (
-      <li key={reverseIndex}>
-        <button onClick={() => jumpTo(reverseIndex)}>{description}</button>
-      </li>
-    );
-  });
+function MovesList({history, isToggled, jumpTo}) {
+  let moves;
+  if(!isToggled){
+    moves =  history.map((squares, move) => {
+      let description;
+      if (move > 0) {
+        description = "Go to move #" + move;
+      } else {
+        description = "Go to game start";
+      }
+      return (
+        <li key ={move}>
+          <button onClick={() => jumpTo(move)}>{description}</button>
+        </li>
+      );
+    })
+  } else {
+    moves = history.map((squares, move) => {
+      const reverseIndex = history.length - 1 - move;
+      let description;
+      if (reverseIndex > 0) {
+        description = "Go to move #" + reverseIndex;
+      } else {
+        description = "Go to game start";
+      } 
+      return (
+        <li key={reverseIndex}>
+          <button onClick={() => jumpTo(reverseIndex)}>{description}</button>
+        </li>
+      );
+    });
+  }
   
   return (
     <>
-      {/* <h1>List</h1> */}
       <ol>{moves}</ol>
-      <ol>{moves2}</ol>
     </>
   );
 }
@@ -134,7 +136,7 @@ export default function Game(){
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <MovesList history={history}  jumpTo={jumpTo}/>
+        <MovesList history={history} isToggled={isToggled} jumpTo={jumpTo}/>
       </div>
     </div>
     <div>
