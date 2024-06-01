@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-const ToggleButton = () => {
-  const [isToggled, setToggle] = useState(false);
+const ToggleButton = ({isToggled, setToggle}) => {
 
   const handleToggle = () => {
     setToggle(!isToggled);
@@ -72,8 +71,7 @@ function Board( { xIsNext, squares, onPlay }) {
   );
 }
 
-function MovesList({history, reverseHistory, jumpTo}) {
-  console.log("Hello, this is movesList() speaking.");
+function MovesList({history, jumpTo}) {
   const moves =  history.map((squares, move) => {
     let description;
     if (move > 0) {
@@ -117,14 +115,12 @@ export default function Game(){
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
+  const [isToggled, setToggle] = useState(false);
 
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
-    // console.log(history);
     setCurrentMove(nextHistory.length - 1);
-    // setReverseHistory(nextHistory.toReversed());
-    // console.log(reverseHistory);
   }
 
   function jumpTo(nextMove) {
@@ -138,11 +134,11 @@ export default function Game(){
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <MovesList history={history} /*reverseHistory={reverseHistory}*/ jumpTo={jumpTo}/>
+        <MovesList history={history}  jumpTo={jumpTo}/>
       </div>
     </div>
     <div>
-      <ToggleButton />
+      <ToggleButton isToggled={isToggled} setToggle={setToggle}/>
     </div>
     </>
   )
