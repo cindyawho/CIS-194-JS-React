@@ -72,6 +72,29 @@ function Board( { xIsNext, squares, onPlay }) {
   );
 }
 
+function MovesList({history, jumpTo}) {
+  console.log("Hello, this is movesList() speaking.");
+  const moves =  history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = "Go to move #" + move;
+    } else {
+      description = "Go to game start";
+    }
+    return (
+      <li key ={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  })
+  return (
+    <>
+      {/* <h1>List</h1> */}
+      <ol>{moves}</ol>
+    </>
+  );
+}
+
 export default function Game(){
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
@@ -88,20 +111,6 @@ export default function Game(){
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
-    } else {
-      description = "Go to game start";
-    }
-    return (
-      <li key ={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
-    );
-  })
-
   return(
     <>
     <div className='game'>
@@ -109,7 +118,7 @@ export default function Game(){
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <ol>{moves}</ol>
+        <MovesList history = {history} jumpTo={jumpTo}/>
       </div>
     </div>
     <div>
