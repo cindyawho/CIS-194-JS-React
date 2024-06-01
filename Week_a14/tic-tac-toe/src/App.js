@@ -87,31 +87,33 @@ function MovesList({history, reverseHistory, jumpTo}) {
       </li>
     );
   })
-  // const moves2 =  reverseHistory.map((squares, move) => {
-  //   let description;
-  //   if (move > 0) {
-  //     description = "Go to move #" + move;
-  //   } else {
-  //     description = "Go to game start";
-  //   }
-  //   return (
-  //     <li key ={move}>
-  //       <button onClick={() => jumpTo(move)}>{description}</button>
-  //     </li>
-  //   );
-  // })
+  const moves2 = history.map((squares, move) => {
+    const reverseIndex = history.length - 1 - move;
+    let description;
+    if (reverseIndex > 0) {
+      description = "Go to move #" + reverseIndex;
+    } else {
+      description = "Go to game start";
+    } 
+    return (
+      <li key={reverseIndex}>
+        <button onClick={() => jumpTo(reverseIndex)}>{description}</button>
+      </li>
+    );
+  });
+  
   return (
     <>
       {/* <h1>List</h1> */}
       <ol>{moves}</ol>
-      {/* <ol>{moves2}</ol> */}
+      <ol>{moves2}</ol>
     </>
   );
 }
 
 export default function Game(){
   const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [reverseHistory, setReverseHistory] = useState([Array(9).fill(null)]);
+  // const [reverseHistory, setReverseHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
@@ -119,10 +121,10 @@ export default function Game(){
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
-    console.log(history);
+    // console.log(history);
     setCurrentMove(nextHistory.length - 1);
-    setReverseHistory(nextHistory.toReversed());
-    console.log(reverseHistory);
+    // setReverseHistory(nextHistory.toReversed());
+    // console.log(reverseHistory);
   }
 
   function jumpTo(nextMove) {
@@ -136,7 +138,7 @@ export default function Game(){
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <MovesList history={history} reverseHistory={reverseHistory} jumpTo={jumpTo}/>
+        <MovesList history={history} /*reverseHistory={reverseHistory}*/ jumpTo={jumpTo}/>
       </div>
     </div>
     <div>
